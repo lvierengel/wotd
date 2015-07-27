@@ -52,10 +52,7 @@ func (g *Generator) Generate(word string) (string, error) {
 		return "", ErrAdjectiveNotFound
 	}
 
-	// Randomly choose an adjective.
+	// Randomly choose a word.
 	adj := a[rand.Intn(len(a))]
-	adj = strings.ToUpper(string(adj[0])) + adj[1:]
-
-	// Return the concatentated phrase.
-	return adj + " " + word, nil
+	return strings.ToLower(adj), nil
 }
